@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result">Press Any Key To Get Started</div>
+
+    <script>
+        window.onload = () => {
+            const cont = document.getElementById('result');
+            const defaultText = "Press Any Key To Get Started"; 
+    
+            document.addEventListener('keydown', (e) => {
+                cont.textContent = `Key pressed was: ${e.key}`;
+                setTimeout(() => {
+                    cont.textContent = defaultText;
+                }, 2000);
+            });
+        };
+    </script>
+    
+</body>
+
+</html>
