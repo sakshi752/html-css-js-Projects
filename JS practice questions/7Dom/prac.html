@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #save {
+            color: white;
+            background-color: red;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="save" onclick="">Save</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("save");
+
+            button.addEventListener("click", () => {
+                if (button.textContent === "save") {
+                    button.textContent = "Saved";
+                    button.style.backgroundColor = "black";
+                } else {
+                    button.textContent = "Save";
+                    button.style.backgroundColor = "red";
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
