@@ -28,7 +28,7 @@ const displayInput = (btn) => {
         } catch (error) {
             msg.textContent = "Invalid Calculation :(";
             setTimeout(() => {
-                msg.textContent = "Please Calculate :P";
+                msg.textContent = "Please Calculate via click and key event:P";
             }, 1000);
         }
     } else {
@@ -38,7 +38,7 @@ const displayInput = (btn) => {
         if (['+', '-', '*', '/'].includes(btn) && ['+', '-', '*', '/'].includes(lastChar)) {
             msg.textContent = "Cannot input consecutive operators!";
             setTimeout(() => {
-                msg.textContent = "Please Calculate :P";
+                msg.textContent = "Please Calculate via click and key event:P";
             }, 1000);
         } else if (!isNaN(btn) || btn === '.' || ['+', '-', '*', '/'].includes(btn)) {
             // Allow explicitly entering 0 after initial 0
@@ -51,7 +51,7 @@ const displayInput = (btn) => {
         } else {
             msg.textContent = "Invalid Input";
             setTimeout(() => {
-                msg.textContent = "Please Calculate :P";
+                msg.textContent = "Please Calculate via click and key event:P";
             }, 1000);
         }
     }
@@ -72,12 +72,12 @@ buttons.forEach(btn => {
 
 window.onload = () => {
     document.addEventListener('keydown', (e) => {
+        e.preventDefault();
         const validInput = /^[0-9+\-*/.=]$/;
 
         if (validInput.test(e.key) || e.key === 'Enter' || e.key === "Backspace") {
             if (e.key === 'Enter') {
                 displayInput('=');
-                e.preventDefault();
             } else if (e.key === 'Backspace') {
                 displayInput('⌫');
             } else {
@@ -89,7 +89,7 @@ window.onload = () => {
             msg.textContent = "KEYS OTHER THAN NUMBERS ARE NOT VALID :(";
 
             setTimeout(() => {
-                msg.textContent = "Please Calculate :P";
+                msg.textContent = "Please Calculate via click and key event:P";
             }, 1000);
         }
     });
